@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BNRI VIDEO GAME STORE - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body {
+            background-image: url("https://images2.alphacoders.com/936/936604.jpg");
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .hr {
+            height: 5px;
+            background-image: linear-gradient(to right, white 0%, #343a40 70%, transparent 100%);
+        !important;
+        }
+
+        .navbar{
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+{% include "components/header.html" %}
+<div class="banner">
+    <div class="card rounded-0 ms-5 w-25 bg-dark text-white border-0">
+        <div class="card-body">
+            <h6 class="card-text w-75 mx-auto"><strong>BEST <span class="text-danger">PRICES</span></strong></h6>
+            <hr class="w-75 mx-auto">
+            <h6 class="card-text w-75 mx-auto"><strong>24/7 CUSTOMER <span class="text-danger">SUPPORT</span></strong>
+            </h6>
+            <div class="hr w-75 mx-auto">
+            </div>
+        </div>
+    </div>
+</div>
+{#{% include "components/footer.html" %}#}
+</body>
+</html>

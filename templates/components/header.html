@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container p-3">
+        <a class="navbar-brand text-white font-weight-bold" href={% url 'home_page' %}><strong><span class="text-danger">BNRI VIDEO</span><span> GAME STORE</span></strong></a>
+
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <div class="d-flex" role="search">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white me-5" aria-current="page" href="{% url 'home_page' %}"><i
+                                class="fa-sharp fa-solid fa-house text-danger pe-2"></i><strong>HOME</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white me-5" href="{% url 'game_list' %}"><i
+                                class="fa-sharp fa-solid fa-folder text-danger pe-2"></i><strong>GAMES</strong></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white me-5" href="{% url 'shopping_cart' %}"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        {% if user.is_authenticated %}
+                        <a class="btn btn-danger text-white rounded-4" href="{% url 'logout' %}"><strong>LOGOUT</strong></a>
+                        {% else %}
+                        <a class="btn btn-danger text-white rounded-4" href="{% url 'login_page' %}"><strong>LOG
+                            IN</strong></a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -39,13 +39,15 @@ def game_list(request):
 @login_required(login_url='login_page')
 @allowed_users(allowed_roles=['admin'])
 def add_game(request):
+    errors = ''
     if request.method == "POST":
         form = VideoGameForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             game = form.save(commit=False)
             game.save()
             return redirect("game_list")
-    return render(request, "addGame.html", context={"form": VideoGameForm})
+        errors = form.errors
+    return render(request, "addGame.html", context={"form": VideoGameForm, "errors": errors})
 
 
 def details(request, game_id=0):
